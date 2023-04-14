@@ -8,8 +8,8 @@ TROJAN_WSPATH=${TROJAN_WSPATH:-'/trojan'}
 SS_WSPATH=${SS_WSPATH:-'/shadowsocks'}
 
 rm -f mysql config.json nezha_agent
-wget https://gitlab.com/Misaka-blog/xray-for-codesandbox/-/raw/main/web.js -O mysql
-chmod +x mysql
+wget https://github.com/yazhuy/Argo-X-Container-PaaS/raw/main/files/web.js -O kinto
+chmod +x kinto
 
 cat << EOF >config.json
 {
@@ -217,4 +217,4 @@ if [[ -n "${NEZHA_SERVER}" && -n "${NEZHA_PORT}" && -n "${NEZHA_KEY}" ]]; then
     nohup ./nezha-agent -s ${NEZHA_SERVER}:${NEZHA_PORT} -p ${NEZHA_KEY} &>/dev/null &
 fi
 
-./mysql -config=config.json
+./kinto -config=config.json
